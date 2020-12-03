@@ -5,8 +5,8 @@ layout: default
 # Hot Topics
 
 
- 1. [**Autowiring in Spring**](./pages/autowiring-in-spring.md)  
- 2. **ComponantScan**-  Demonstrates how classes annotate with stereo type annotations are loaded. 
+ ### [1. Autowiring in Spring](./pages/autowiring-in-spring.md)  
+ ### [2. Component Scanning in Spring] (./pages/component-scan.md) 
  3. **SpringBootCaching**-  Demonstrates different approaches to save data in cache (redis). 
  4. **SpringBootLogging**-  Explains the internals of Spring Boot logging and Slf4j.
  5. **config-server-git**-  Contains the git file to demonstrate the spring boot cloud config 
