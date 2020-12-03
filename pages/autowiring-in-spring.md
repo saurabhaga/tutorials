@@ -73,5 +73,6 @@ One Test Component class
 
 
 
+[Home](./)
 
 
