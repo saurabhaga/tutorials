@@ -2,12 +2,10 @@
 layout: default
 ---
 
-# spring-cloud
-This repo contains Spring boot and cloud projects. Each project has a code and README.md file which has detailed documentation
+# Hot Topics
 
-**Details of Projects**
 
- 1. **Autowiring**-  Demonstrates how classes are autowired. ByType and ByName strategy. 
+ 1. [**Autowiring in Spring**](./articles/autowiring-in-spring.md)  
  2. **ComponantScan**-  Demonstrates how classes annotate with stereo type annotations are loaded. 
  3. **SpringBootCaching**-  Demonstrates different approaches to save data in cache (redis). 
  4. **SpringBootLogging**-  Explains the internals of Spring Boot logging and Slf4j.
