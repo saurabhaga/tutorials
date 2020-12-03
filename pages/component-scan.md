@@ -84,3 +84,7 @@ spring:
 @SpringBootApplication(
   exclude = { com.test.CustomAutoconfiguration.class })
 ```
+
+
+[Download source code](https://github.com/saurabhaga/tutorials/tree/main/code/ComponentScan) 
+[Back to Home Page](../)
