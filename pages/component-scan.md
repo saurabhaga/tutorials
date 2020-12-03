@@ -56,7 +56,7 @@ will load all the classes under `com.outerpackage4` also.
 
 **Important Points**
 
--   **@SpringBootApplicaition** - This is equivalent to adding all three @ComponentScan , @Configuration , @EnableAutoConfiguration
+-   **@SpringBootApplication** - This is equivalent to adding all three @ComponentScan , @Configuration , @EnableAutoConfiguration
 
  
 -   If we do not add package in  `@ComponentScan`  annotation, it by defaults loads classes under same or child package where it is added.
