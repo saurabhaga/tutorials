@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 
 # This project demonstrates how Component scanning works
 
