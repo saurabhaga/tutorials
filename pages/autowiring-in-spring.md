@@ -76,8 +76,6 @@ One Test Component class
  5. For example, if we define `@Autowired private Car maruti1;`  -this will throw error as "byType" there are 2 choices and with "byName" there is no bean with name with maruti1 so Spring will greet us with an error.
     
 
-
-
-[Home](../)
+[Download source code](../code/Autowiring) | [Back to Home Page](../)
 
 
