@@ -1,3 +1,8 @@
+
+---
+layout: default
+---
+
 ## Spring Autowiring
 
 ### This project demonstrates the Spring Autowiring with example.
