@@ -87,5 +87,4 @@ spring:
 ```
 
 
-[Download source code](https://github.com/saurabhaga/tutorials/tree/main/code/ComponentScan) 
-[Back to Home Page](../)
+[Download source code](https://github.com/saurabhaga/tutorials/tree/main/code/ComponentScan) | [Back to Home Page](../)
