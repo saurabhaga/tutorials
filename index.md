@@ -2,6 +2,26 @@
 layout: default
 ---
 
+# spring-cloud
+This repo contains Spring boot and cloud projects. Each project has a code and README.md file which has detailed documentation
+
+**Details of Projects**
+
+ 1. **Autowiring**-  Demonstrates how classes are autowired. ByType and ByName strategy. 
+ 2. **ComponantScan**-  Demonstrates how classes annotate with stereo type annotations are loaded. 
+ 3. **SpringBootCaching**-  Demonstrates different approaches to save data in cache (redis). 
+ 4. **SpringBootLogging**-  Explains the internals of Spring Boot logging and Slf4j.
+ 5. **config-server-git**-  Contains the git file to demonstrate the spring boot cloud config 
+ 6. **cloud-config-server**-  Demonstrate how the Spring boot cloud config server works.
+ 7. **cloud-config-client**-  Demonstrate how the Spring boot cloud config client works.
+ 8. **SpringBootScope**-  Demonstrate how the different scope of object works in Spring boot.
+ 9. **SpringBootAutoconfigure**-  Demonstrate Spring boot autoconfigure feature.
+ 10. **Exception Handling**-  Demonstrate Spring boot Exception Handler Feature feature.
+ 
+ 
+ 
+
+
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](./another-page.html).
