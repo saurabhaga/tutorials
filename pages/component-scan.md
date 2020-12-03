@@ -6,7 +6,7 @@ layout: default
 
 ### This article demonstrates the Spring Component Scanning with example.
 
-a) By default Spring boot scans **@Component, @Configuration, @Service, @Repository** annotated classes defined under package or sub 
+a) By default Spring boot scans **@Component, @Configuration, @Service, @Repository and @Controller** annotated classes defined under package or sub 
 packages of main Class.
 
 b) In order to scan other classes annotated with these annotation defined under different package, annotate the class with **@ComponentScan** annotation.
@@ -15,19 +15,48 @@ c) If you add @ComponentScan, it overrides the default and will scan only packag
 
 **Note: It is not necessary that you add @ComponentScan on main class. You can add it on @Configuration or @Component classes. The moment those classes loads, it sees that @ComponantScan is defined so it will load classes from those packages also.**
 
-All above points are demonstrated in the code.
+Let's validate all above points with the help of example.
 
-a) **_@ComponentScan(basePackages = {"com.outerpackage2","com.example"})_** on Main class loads the classes defined under `com.example, com.example.subpackage1 and com.outerpackage2.`
 
-b) Above will load Component2.java which is again annotated with **_@ComponentScan("com.outerpackage3")_** so this 
+```
+// This is the main class defined under com.example package 
+
+@SpringBootApplication
+@ComponentScan(basePackages = {"com.outerpackage2","com.example"})
+public class ComponantScanApplication {
+
+```
+a) **_@ComponentScan(basePackages = {"com.outerpackage2","com.example"})_** on Main class loads the classes defined under `com.example, com.example.subpackage1 and com.outerpackage2.` because ```com.example.subpackage1``` is the child package of com.example.
+
+```
+// Inside com.outerpackage2 there is below class
+@Component
+@ComponentScan("com.outerpackage3")
+public class Component2 {
+```
+
+b) Now as ```com.outerpackage2``` is scanned, it will load Component2.java which is again annotated with **_@ComponentScan("com.outerpackage3")_** so this 
 will load all the classes under `com.outerpackage3` also.
 
-c) Point b will load  Config3.java which is again annotated with **_@ComponentScan("com.outerpackage4")_** so this 
+```
+// Inside com.outerpackage3 , there is another Configuration class as below 
+@Configuration
+@ComponentScan("com.outerpackage4")
+public class Config3 {
+
+	@Bean
+	public Bean3 getBean3() {
+		return new Bean3();
+	}
+}
+
+```
+c) Now Config3.java will be loaded which is again annotated with **_@ComponentScan("com.outerpackage4")_** so this 
 will load all the classes under `com.outerpackage4` also.
 
 **Important Points**
 
--   **@SpringBootApplicaiton** - This is equivalent to adding all three @ComponentScan , @Configuration , @EnableAutoConfiguration
+-   **@SpringBootApplicaition** - This is equivalent to adding all three @ComponentScan , @Configuration , @EnableAutoConfiguration
 
  
 -   If we do not add package in  `@ComponentScan`  annotation, it by defaults loads classes under same or child package where it is added.
