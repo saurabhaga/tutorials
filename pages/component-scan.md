@@ -2,8 +2,9 @@
 layout: default
 ---
 
+# Component Scanning
 
-# This project demonstrates how Component scanning works
+### This article demonstrates the Spring Component Scanning with example.
 
 a) By default Spring boot scans **@Component, @Configuration, @Service, @Repository** annotated classes defined under package or sub 
 packages of main Class.
