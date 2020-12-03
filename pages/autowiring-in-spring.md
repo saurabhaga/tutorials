@@ -7,11 +7,11 @@ layout: default
 ### This article demonstrates the Spring Autowiring with example.
 
 ## Key Points to understand
- - **Spring Autowiring is “byType” followed by “ byName”**.
+ - Spring Autowiring is “byType” followed by “ byName”.
  - **"byType"** - Determine beans by Type variables. 
  - **"byName"** - Determine beans by variables name. 
- - **By default name of class with first letter small case will be the bean name**.
- - **We can  also define the name of Beans inside @Component("bean name") or @Bean("bean name")**.
+ - By default name of class with first letter small case will be the bean name.
+ - We can  also define the name of Beans inside @Component("bean name") or @Bean("bean name").
 
 Lets understand the key points with the help of real world example.
 
