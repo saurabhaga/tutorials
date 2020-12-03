@@ -5,7 +5,7 @@ layout: default
 
 ## Spring Autowiring
 
-### This project demonstrates the Spring Autowiring with example.
+### This article demonstrates the Spring Autowiring with example.
 
  - **Spring Autowiring is “byType” followed by “ byName”**
  - **"byType"** - Determine beans by Type variables. 
