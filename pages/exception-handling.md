@@ -12,7 +12,7 @@ If any exception is thrown in REST, we can control and can handle it at a 2 leve
 
 **Controller Level**
 
-Lets define Controller and two method which will throw `IllegallArgumentException` and `NullpointerException`
+Lets define Controller and two method which will throw `IllegalArgumentException` and `NullPointerException`
 
     @RequestMapping("/hello")
     public String hello(){
