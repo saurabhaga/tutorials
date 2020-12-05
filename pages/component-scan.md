@@ -83,6 +83,24 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.test.CustomAutoconfiguration
 ```
 
+```
+package com.test;
+import org.springframework.context.annotation.Bean;
+import com.test2.TestBean;
+public class CustomAutoconfiguration {
+	@Bean
+	public TestBean getTestBean() {
+		return new TestBean();
+	}
+}
+```
+
+```
+package com.test2;
+public class TestBean {
+}
+```
+
 
 **Details**
 
@@ -92,7 +110,7 @@ b) Create a class `CustomAutoconfiguration` under `com.test` package. Define one
 
 **Note:** 
 > If we define any class as EnableAutoConfiguration, that class will be loaded automatically no matter which package it is in.
-> Note: This feature applies to any class annotated with stereo type annotation. In this example TestBean class is annotated with @Component 
+
 
 
 ## Disable Auto Configuration
