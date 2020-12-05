@@ -9,6 +9,8 @@ layout: default
  
  [**2. Component Scanning in Spring**](./pages/component-scan.md)
  
+ [**3. Exception Handling in Spring**](./pages/exception-handling.md)
+ 
  3. **SpringBootCaching**-  Demonstrates different approaches to save data in cache (redis). 
  4. **SpringBootLogging**-  Explains the internals of Spring Boot logging and Slf4j.
  5. **config-server-git**-  Contains the git file to demonstrate the spring boot cloud config 
