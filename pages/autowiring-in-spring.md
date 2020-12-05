@@ -75,6 +75,5 @@ One Test Component class
  4. For line number 4 and 5 - **even though the type is car** , spring tries to use **“byname”** strategy because if finds 2 implementations as second strategy. With this Spring will find beans with the name “honda” and “maruti” which is same as the variable names used in line number 4 and  5
  5. For example, if we define `@Autowired private Car maruti1;`  -this will throw error as "byType" there are 2 choices and with "byName" there is no bean with name with maruti1 so Spring will greet us with an error.
     
-[Download source code](https://github.com/saurabhaga/tutorials/tree/main/code/Autowiring) 
-[Back to Home Page](../)
+[Download source code](https://github.com/saurabhaga/tutorials/tree/main/code/Autowiring) |[Back to Home Page](../)
 
