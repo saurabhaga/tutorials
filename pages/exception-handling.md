@@ -1,4 +1,8 @@
-﻿# Spring REST Exception Handling
+---
+layout: default
+---
+ 
+ # Spring REST Exception Handling
 
 If any exception is thrown in REST, we can control and can handle it at 2 levels.
 
