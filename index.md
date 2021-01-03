@@ -11,4 +11,6 @@ layout: default
  
  [**3. Exception Handling in Spring**](./pages/exception-handling.md)
  
+ [**4. Cloud Config server in Spring boot**](./pages/sb-config-server.md)
+ 
 
