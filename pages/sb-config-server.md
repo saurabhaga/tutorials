@@ -36,6 +36,12 @@ In this example. lets assume there is a Git repo with name "spring-cloud" and th
 person-service-dev.properties
 person-service-prod.properties
 ```
+
+**Sample Content of files 
+```
+server.port=8090
+application.desc=person-service-develop-brach-devprofile-runtime - updated
+```
 > Name of file will be in the format of  {service name of consuming service}-{active profile}.properties.
 
 ### Step 2 Create Config Server Application
@@ -45,7 +51,7 @@ Create a spring boot project and add "Config Server" dependency by adding `imple
 Configure below in `application.properties` 
 
 ```
-server.port= 8082
+server.port= 8081
 spring.application.name=Cloud Config Server
 
 #git repo .This is the url we used to clone 
@@ -65,7 +71,7 @@ spring.cloud.config.server.git.search-paths=config-server-git
 ```
 
 - Open main class and add `@EnableConfigServer` annotation.
-- Run the main program. Application will run on 8082 as we configured it in application.properties
+- Run the main program. Application will run on 8081 as we configured it in application.properties
 ### Verification
 - We can check that server is up and can see the files using 
 - http://localhost:8081/person-service/dev/master
@@ -77,4 +83,46 @@ Sample Output
 ![sample](../images/cloud-config-1.png)
 
 
-[Download source code](https://github.com/saurabhaga/tutorials/tree/main/code/Autowiring) |[Back to Home Page](../)
+# Cloud Config Server using Database
+If the requirement is to use relational databse to store properties instead of Git, that option is also available. To do this, you need to follow below steps
+- Add `implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'` and `runtimeOnly 'com.h2database:h2' // change it as per actual db`under dependencies section of build.gradle file 
+- Define Database details in application.properties file (change db url, credentials)
+```
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.profiles.active=jdbc
+spring.jpa.show-sql=true
+```
+- Spring active profile has to be  **jdbc
+- Create a table in defined database with name PROPERTIES and columns as APPLICATION, PROFILE, LABEL, KEY and VALUE as Varchar
+- Sample Create and Insert Queries are below 
+```
+CREATE TABLE PROPERTIES(
+APPLICATION VARCHAR(255) NOT NULL,
+PROFILE VARCHAR(255) NOT NULL,
+LABEL VARCHAR(255) ,
+KEY VARCHAR(255) NOT NULL,
+VALUE VARCHAR(255) NOT NULL
+);
+INSERT INTO PROPERTIES (application , profile, label, key, value) VALUES ('test-service', 'prod', 'master-branch','key1', 'prod-value1');
+INSERT INTO PROPERTIES (application , profile, label, key, value) VALUES ('test-service', 'prod', 'master-branch','key2', 'prod-value2');
+INSERT INTO PROPERTIES (application , profile, label, key, value) VALUES ('test-service', 'dev', 'develop-branch', 'key1', 'dev-value1');
+INSERT INTO PROPERTIES (application , profile, label, key, value) VALUES ('test-service', 'dev', 'develop-branch', 'key1', 'dev-value2');
+```
+
+**Verification 
+
+Test by accessing below urls
+http://localhost:8080/test-service/dev/develop-branch
+http://localhost:8080/test-service/prod/master-branch
+
+**Note: Table and column names can be configured in application.properties using `spring.cloud.config.server.jdbc.sql` property like 
+
+```
+spring.cloud.config.server.jdbc.sql= SELECT KEY, VALUE from SERVICE_PROPERTIES where APPLICATION=? and PROFILE=? and LABEL=?
+```
+
+[Back to Home Page](../)
