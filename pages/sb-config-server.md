@@ -37,7 +37,7 @@ person-service-dev.properties
 person-service-prod.properties
 ```
 
-**Sample Content of files 
+**Sample Content of file**
 ```
 server.port=8090
 application.desc=person-service-develop-brach-devprofile-runtime - updated
@@ -96,7 +96,7 @@ spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 spring.profiles.active=jdbc
 spring.jpa.show-sql=true
 ```
-- Spring active profile has to be  **jdbc
+- Spring active profile has to be  **jdbc**
 - Create a table in defined database with name PROPERTIES and columns as APPLICATION, PROFILE, LABEL, KEY and VALUE as Varchar
 - Sample Create and Insert Queries are below 
 ```
