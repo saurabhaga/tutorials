@@ -74,7 +74,7 @@ spring.cloud.config.server.git.search-paths=config-server-git
 - Any changes done in git is reflected in real time on config server
 
 Sample Output 
-![sample](images/cloud-config-1.png)
+![sample](../images/cloud-config-1.png)
 
 
 [Download source code](https://github.com/saurabhaga/tutorials/tree/main/code/Autowiring) |[Back to Home Page](../)
