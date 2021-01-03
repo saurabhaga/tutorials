@@ -119,7 +119,7 @@ Test by accessing below urls
 http://localhost:8080/test-service/dev/develop-branch
 http://localhost:8080/test-service/prod/master-branch
 
-**Note: Table and column names can be configured in application.properties using `spring.cloud.config.server.jdbc.sql` property like **
+**Note: Table and column names can be configured in application.properties using `spring.cloud.config.server.jdbc.sql` property like**
 
 ```
 spring.cloud.config.server.jdbc.sql= SELECT KEY, VALUE from SERVICE_PROPERTIES where APPLICATION=? and PROFILE=? and LABEL=?
