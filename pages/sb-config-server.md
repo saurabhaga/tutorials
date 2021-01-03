@@ -116,9 +116,10 @@ INSERT INTO PROPERTIES (application , profile, label, key, value) VALUES ('test-
 **Verification**
 
 Test by accessing below urls
+```
 http://localhost:8080/test-service/dev/develop-branch
 http://localhost:8080/test-service/prod/master-branch
-
+```
 **Note: Table and column names can be configured in application.properties using `spring.cloud.config.server.jdbc.sql` property like**
 
 ```
