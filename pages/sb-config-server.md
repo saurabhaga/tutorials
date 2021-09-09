@@ -13,7 +13,7 @@ seperately outside code base in git repository (other options are also available
 - Spring Cloud config server is being used to configure the properties. 
 - Properties can be stored in git which can be secured.
 - We can configure the git branch, profile from where to read the data.
-- One of the finest example of cloud config is server port. It is not advisable to hardcode the path in boot app itself as we may need to run app on different ports in different lifecycles
+- One of the finest example of cloud config is server port. It is not advisable to hardcode the port in boot app itself as we may need to run app on different ports in different lifecycles
 
 **There are 2 parts –**
 
