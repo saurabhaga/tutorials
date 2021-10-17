@@ -8,12 +8,12 @@ layout: default
 
 
 **Initial heap size**
-- Can be overridden with -Xms <value> <unit in k , m , g>
+- Can be overridden with -Xms {value} {unit in k , m , g}
 - Default value if not speified is larger of 1/64th of the machine's physical memory 
 
 
 **Maximum heap size**
-- Can be overridden with -Xmx <value> <unit in k , m , g>
+- Can be overridden with -Xmx {value} {unit in k , m , g}
 - Default value if not speified Smaller of 1/4th of the physical memory or 1GB
 
   
