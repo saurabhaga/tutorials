@@ -13,4 +13,6 @@ layout: default
  
  [**4. Cloud Config server in Spring boot**](./pages/sb-config-server.md)
  
+ [**5. Java Memory Arguments**](./pages/java-memory.md)
+ 
 
