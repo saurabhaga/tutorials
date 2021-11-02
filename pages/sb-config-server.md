@@ -72,6 +72,11 @@ spring.cloud.config.server.git.search-paths=config-server-git
 
 - Open main class and add `@EnableConfigServer` annotation.
 - Run the main program. Application will run on 8081 as we configured it in application.properties
+
+### Note:  Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.  So we need to get the personal token and use it in spring.cloud.config.server.git.password property. In order to get the personal token, 
+ a) login in your gitHub folow this path: Settings > Developer settings > Personal access tokens > Generate new token
+ 
+ b)  Now set a long time to expiration token, check the "repo" to allow access repository with this token, and Generate token.
 ### Verification
 - We can check that server is up and can see the files using 
 - http://localhost:8081/person-service/dev/master
