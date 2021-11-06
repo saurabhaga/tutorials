@@ -131,4 +131,7 @@ http://localhost:8080/test-service/prod/master-branch
 spring.cloud.config.server.jdbc.sql= SELECT KEY, VALUE from SERVICE_PROPERTIES where APPLICATION=? and PROFILE=? and LABEL=?
 ```
 
+**Note** - Specify the default branch (more generally, Git label) that a config server uses if a client does not specify the label using below properties
+spring.cloud.config.server.git.default-label=develop
+
 [Back to Home Page](../)
