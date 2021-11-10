@@ -6,8 +6,9 @@ layout: default
 
 ### This article will explain the need and implemenation of cloud config server in microservices with Spring Boot.
 
-We all know that no one would like to do the hardcoding of configurations like database details, port etc so Cloud config server solves this problem where the configurtaions can be managed 
-seperately outside code base in git repository (other options are also available like using database).  At first, it looks very complicated but Spring took away all the complexiy and we just need to add couple of dependencies along with some annotations and we are all set with our cloud config server.
+We all know that no one would like to do the hardcoding of configurations like database details, port etc so Cloud config server solves this problem where the configurtaions can be managed seperately outside code base in git repository (other options are also available like using database).  At first, it looks very complicated but Spring took away all the complexiy and we just need to add couple of dependencies along with some annotations and we are all set with our cloud config server.
+
+Spring Cloud Config server alterntive is HashiCorp's Consul key value pair.
 
 ## Key points to understand.
 - Spring Cloud config server is being used to configure the properties. 
@@ -28,12 +29,12 @@ seperately outside code base in git repository (other options are also available
 - Create a git repo where the configurations will be saved. 
 - You can create files at root location of git (means separate repo for git) or can be inside any folder of git. 
 - If you create files under folder of git repo, you need to define the search path property in cloud config server.
-- Default branch is master.
+- Default branch is master. This can be overridden with the 
 
-In this example. lets assume there is a Git repo with name "spring-cloud" and there is a folder inside it with name `config-server-git`. Lets create two files under config-server-git folder in both master and develop branch
+In this example. lets assume there is a Git repo with name "spring-cloud-microservices" and there is a folder inside it with name `config-files`. Lets create two files under config-files folder in both master and develop branch
  
 ```
-person-service-dev.properties
+application.properties
 person-service-prod.properties
 ```
 
@@ -55,19 +56,24 @@ server.port= 8081
 spring.application.name=Cloud Config Server
 
 #git repo .This is the url we used to clone 
-spring.cloud.config.server.git.uri= https://github.com/saurabhaga/spring-cloud.git
+spring.cloud.config.server.git.uri= https://github.com/saurabhaga/spring-cloud-microservices
 # if any error it will throw on server start else on first request
 spring.cloud.config.server.git.clone-on-start=true
 
-# git repo credentials if git repo is private 
+# git repo credentials only if git repo is private 
 spring.cloud.config.server.git.username= saurabhaga
-spring.cloud.config.server.git.password= *********
+# password has to be personal token as password authentication is removed on Aug 13, 2021 by git. Refer below sections for more details
+spring.cloud.config.server.git.password= ********* 
 
 # skil ssl verification
 spring.cloud.config.server.git.skip-ssl-validation=true
 
 # This is required if your files under folder. In this example, it is not at root of git repo so add the folder name in search path.
-spring.cloud.config.server.git.search-paths=config-server-git
+spring.cloud.config.server.git.search-paths=config-files
+
+# This is required if you want to change default branch whcih is master.
+spring.cloud.config.server.git.default-label=develop
+
 ```
 
 - Open main class and add `@EnableConfigServer` annotation.
@@ -133,5 +139,10 @@ spring.cloud.config.server.jdbc.sql= SELECT KEY, VALUE from SERVICE_PROPERTIES w
 
 **Note** - Specify the default branch (more generally, Git label) that a config server uses if a client does not specify the label using below properties
 spring.cloud.config.server.git.default-label=develop
+
+## References :
+*[Spring Cloud Config Official Documentation](https://docs.spring.io/spring-cloud-config/docs/current/reference/html/)
+*[Spring Cloud Config: Sample Implementation](https://docs.spring.io/spring-cloud-config/docs/current/reference/html/)
+
 
 [Back to Home Page](../)
