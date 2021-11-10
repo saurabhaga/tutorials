@@ -143,7 +143,7 @@ spring.cloud.config.server.git.default-label=develop
 ## References :
 [Official Documentation](https://docs.spring.io/spring-cloud-config/docs/current/reference/html/)
 
-[Sample Implementation](https://docs.spring.io/spring-cloud-config/docs/current/reference/html/)
+[Sample Implementation](https://github.com/saurabhaga/spring-cloud-microservices/tree/develop/ConfigServer/)
 
 
 [Back to Home Page](../)
