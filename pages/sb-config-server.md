@@ -141,8 +141,9 @@ spring.cloud.config.server.jdbc.sql= SELECT KEY, VALUE from SERVICE_PROPERTIES w
 spring.cloud.config.server.git.default-label=develop
 
 ## References :
-*[Spring Cloud Config Official Documentation](https://docs.spring.io/spring-cloud-config/docs/current/reference/html/)
-*[Spring Cloud Config: Sample Implementation](https://docs.spring.io/spring-cloud-config/docs/current/reference/html/)
+[Official Documentation](https://docs.spring.io/spring-cloud-config/docs/current/reference/html/)
+
+[Sample Implementation](https://docs.spring.io/spring-cloud-config/docs/current/reference/html/)
 
 
 [Back to Home Page](../)
