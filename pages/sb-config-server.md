@@ -29,8 +29,7 @@ Spring Cloud Config server alternative is HashiCorp's Consul key value pair.
 - Create a git repo where the configurations will be saved. 
 - You can create files at root location of git (means separate repo for git) or can be inside any folder of git. 
 - If you create files under folder of git repo, you need to define the search path property in cloud config server.
-- Default branch is master. This can be overridden with the 
-
+- 
 In this example. lets assume there is a Git repo with name "spring-cloud-microservices" and there is a folder inside it with name `config-files`. Lets create two files under config-files folder in both master and develop branch
  
 ```
