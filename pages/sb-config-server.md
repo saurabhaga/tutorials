@@ -6,9 +6,9 @@ layout: default
 
 ### This article will explain the need and implemenation of cloud config server in microservices with Spring Boot.
 
-We all know that no one would like to do the hardcoding of configurations like database details, port etc so Cloud config server solves this problem where the configurtaions can be managed seperately outside code base in git repository (other options are also available like using database).  At first, it looks very complicated but Spring took away all the complexiy and we just need to add couple of dependencies along with some annotations and we are all set with our cloud config server.
+We all know that no one would like to do the hardcoding of configurations like database details, port etc so Cloud config server solves this problem where the configurations can be managed seperately outside code base in git repository (other options are also available like using database).  At first, it looks very complicated but Spring took away all the complexity and we just need to add couple of dependencies along with some annotations and we are all set with our cloud config server.
 
-Spring Cloud Config server alterntive is HashiCorp's Consul key value pair.
+Spring Cloud Config server alternative is HashiCorp's Consul key value pair.
 
 ## Key points to understand.
 - Spring Cloud config server is being used to configure the properties. 
@@ -71,7 +71,7 @@ spring.cloud.config.server.git.skip-ssl-validation=true
 # This is required if your files under folder. In this example, it is not at root of git repo so add the folder name in search path.
 spring.cloud.config.server.git.search-paths=config-files
 
-# This is required if you want to change default branch whcih is master.
+# This is required if you want to change default branch. Default branch is the branch which you set default in your repo. in bitbucket it is main
 spring.cloud.config.server.git.default-label=develop
 
 ```
